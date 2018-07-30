@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
 	View,
-	ImageBackground,
+	Image,
 	StyleSheet,
 	ImageEditor,
 	PanResponder,
@@ -341,7 +341,7 @@ class ImageCrop extends Component {
 						}),
 					}]}
 				>
-					<ImageBackground
+					<Image
 						resizeMode="cover"
 						source={this.props.source}
 						style={[styles.image, {
@@ -362,7 +362,7 @@ class ImageCrop extends Component {
 								backgroundColor: (isLower) ? 'rgba(0, 0, 0, 0.5)' : 'transparent',
 							}} />
 						)}
-					</ImageBackground>
+					</Image>
 				</View>
 			);
 		}
