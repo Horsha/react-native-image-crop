@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {
 	View,
+	Image,
 	ImageBackground,
 	StyleSheet,
 	ImageEditor,
