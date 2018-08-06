@@ -322,6 +322,52 @@ class ImageCrop extends Component {
 	renderImage(isLower = false) {
 		if (this.state.imageWidth) {
 			return (
+				// <View
+				// 	style={[styles.imageWrapper, {
+				// 		width: (isLower ?
+				// 			this.state.containerWidth :
+				// 			this.state.containerWidth - this.getTotalPaddingLeftRight()
+				// 		),
+				// 		height: (isLower ?
+				// 			this.state.containerHeight :
+				// 			this.state.containerHeight - this.getTotalPaddingTopBottom()
+				// 		),
+				// 		top: (isLower ? 0 : this.state.cropPaddingTop),
+				// 		left: (isLower ? 0 : this.state.cropPaddingLeft),
+				// 		...Platform.select({
+				// 			android: {
+        //         backgroundColor: (isLower) ? 'rgba(0, 0, 0, 0.5)' : 'transparent',
+				// 			},
+				// 		}),
+				// 	}]}
+				// >
+				// 	<Image
+				// 		resizeMode="cover"
+				// 		source={this.props.source}
+				// 		style={[styles.image, {
+				// 			width: this.state.imageWidth,
+				// 			height: this.state.imageHeight,
+				// 			left: this.state.imageLeft + (isLower ? 0 : -this.getTotalPaddingLeft()),
+				// 			top: this.state.imageTop + (isLower ? 0 : -this.getTotalPaddingTop()),
+				// 			...Platform.select({
+				// 				ios: {
+        //           opacity: (isLower ? 0.5 : 1),
+				// 				},
+				// 				android: {
+				// 					flex: 1,
+				// 					backgroundColor: (isLower) ? 'rgba(0, 0, 0, 0.5)' : 'transparent',
+				// 				}
+				// 			}),
+				// 		}]}
+				// 	/>
+				// 		{/* {Platform.OS === 'android' && isLower && (
+        //       <View style={{
+				// 				flex: 1,
+				// 				backgroundColor: (isLower) ? 'rgba(0, 0, 0, 0.5)' : 'transparent',
+				// 			}} />
+				// 		)} */}
+				// 	{/* </Image> */}
+				// </View>
 				<View
 					style={[styles.imageWrapper, {
 						width: (isLower ?
@@ -334,11 +380,6 @@ class ImageCrop extends Component {
 						),
 						top: (isLower ? 0 : this.state.cropPaddingTop),
 						left: (isLower ? 0 : this.state.cropPaddingLeft),
-						...Platform.select({
-							android: {
-                backgroundColor: (isLower) ? 'rgba(0, 0, 0, 0.5)' : 'transparent',
-							},
-						}),
 					}]}
 				>
 					<Image
@@ -349,20 +390,9 @@ class ImageCrop extends Component {
 							height: this.state.imageHeight,
 							left: this.state.imageLeft + (isLower ? 0 : -this.getTotalPaddingLeft()),
 							top: this.state.imageTop + (isLower ? 0 : -this.getTotalPaddingTop()),
-							...Platform.select({
-								ios: {
-                  opacity: (isLower ? 0.5 : 1),
-								},
-							}),
+							opacity: (isLower ? 0.5 : 1),
 						}]}
-					>
-						{Platform.OS === 'android' && isLower && (
-              <View style={{
-								flex: 1,
-								backgroundColor: (isLower) ? 'rgba(0, 0, 0, 0.5)' : 'transparent',
-							}} />
-						)}
-					</Image>
+					/>
 				</View>
 			);
 		}
